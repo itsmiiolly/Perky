@@ -30,7 +30,7 @@ public class CosmeticCommands extends PerkyModule {
             desc = "Send a hug!",
             min = 1,
             max = 1)
-    @CommandPermissions("utensils.hug")
+    @CommandPermissions("perky.hug")
     public static void hug(CommandContext args, CommandSender sender) throws Exception {
     	if (args.argsLength() > 0) {
     		String name = args.getString(0);
@@ -49,7 +49,7 @@ public class CosmeticCommands extends PerkyModule {
             desc = "Send a friendly hello!",
             min = 1,
             max = 1)
-    @CommandPermissions("utensils.hello")
+    @CommandPermissions("perky.hello")
     public static void hello(CommandContext args, CommandSender sender) throws Exception {
         if (args.argsLength() > 0) {
             String name = args.getString(0);
