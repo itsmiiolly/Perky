@@ -14,7 +14,7 @@ import com.sk89q.minecraft.util.commands.CommandPermissions;
 
 public class Hug extends PerkyModule {
 	
-	@Override
+    @Override
     public void load(Core instance) {        
     }
 
@@ -25,11 +25,10 @@ public class Hug extends PerkyModule {
 	
 	@SuppressWarnings("deprecation")
 	@Command(
-    		aliases = {"hug"},
+    	    aliases = {"hug"},
             desc = "Send a hug!",
-            min = 0,
-            max = 1,
-            flags = "a")
+            min = 1,
+            max = 1)
     @CommandPermissions("utensils.hug")
     public static void hug(CommandContext args, CommandSender sender) throws Exception {
     	if (args.argsLength() > 0) {
@@ -41,17 +40,7 @@ public class Hug extends PerkyModule {
     			target.playEffect(target.getLocation(), Effect.HEART, 5);
     			target.playEffect(target.getEyeLocation(), Effect.HEART, 5);
     		}
-    	} else if(args.argsLength() == 0) {
-    		if (args.hasFlag('a')) {
-        		for(Player all : Bukkit.getServer().getOnlinePlayers()) {
-        			all.playEffect(all.getLocation(), Effect.HEART, 5);
-        			all.playEffect(all.getEyeLocation(), Effect.HEART, 5);
-        		}
-        	}
-    		Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + sender.getName() + " has just hugged everyone. How adorable!");
-    	} else {
-    		sender.sendMessage(ChatColor.RED + "You must provided a username or use flag -a to hug everyone.");
-    	}
     	
+        }
     }
 }
