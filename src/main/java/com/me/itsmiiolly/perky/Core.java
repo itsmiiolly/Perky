@@ -9,7 +9,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.google.common.collect.Maps;
-import com.me.itsmiiolly.perky.modules.Hug;
+import com.me.itsmiiolly.perky.modules.CosmeticCommands;
 import com.sk89q.bukkit.util.CommandsManagerRegistration;
 import com.sk89q.minecraft.util.commands.CommandException;
 import com.sk89q.minecraft.util.commands.CommandPermissionsException;
@@ -30,7 +30,7 @@ public class Core extends JavaPlugin {
         
         Config.load(this);
         
-        registerModule("hug", new Hug());
+        registerModule("cosmetic", new CosmeticCommands());
         
         for (PerkyModule m : modules.values())
             m.load(this);
