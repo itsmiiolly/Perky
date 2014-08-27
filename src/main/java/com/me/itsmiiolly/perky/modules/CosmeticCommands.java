@@ -23,17 +23,12 @@ public class CosmeticCommands extends PerkyModule {
     public void unload(Core instance) {        
     }
 
-	
-	@SuppressWarnings("deprecation")
-	@Command(
-    	    aliases = {"hug"},
-            desc = "Send a hug!",
-            min = 1,
-            max = 1)
+	@Command( aliases = {"hug"}, desc = "Send a hug!", min = 1, max = 1)
     @CommandPermissions("perky.hug")
     public static void hug(CommandContext args, CommandSender sender) throws Exception {
     	if (args.argsLength() > 0) {
     		String name = args.getString(0);
+            @SuppressWarnings("deprecation")
     		Player target = Bukkit.getPlayer(name);
     		if (target != null) {
     			sender.sendMessage(ChatColor.LIGHT_PURPLE + "Successfully sent hug to " + target.getName());
@@ -44,11 +39,8 @@ public class CosmeticCommands extends PerkyModule {
     	
         }
     }
-	@Command(
-            aliases = {"hello"},
-            desc = "Send a friendly hello!",
-            min = 1,
-            max = 1)
+
+	@Command( aliases = {"hello"}, desc = "Send a friendly hello!", min = 1, max = 1)
     @CommandPermissions("perky.hello")
     public static void hello(CommandContext args, CommandSender sender) throws Exception {
         if (args.argsLength() > 0) {
