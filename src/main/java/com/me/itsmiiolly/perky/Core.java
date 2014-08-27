@@ -17,8 +17,10 @@ import com.sk89q.minecraft.util.commands.CommandUsageException;
 import com.sk89q.minecraft.util.commands.CommandsManager;
 import com.sk89q.minecraft.util.commands.MissingNestedCommandException;
 import com.sk89q.minecraft.util.commands.WrappedCommandException;
+import org.bukkit.command.Command;
 
 public class Core extends JavaPlugin {
+
     private CommandsManager<CommandSender> commands;
     public CommandsManagerRegistration cmdRegister;
     
@@ -61,8 +63,7 @@ public class Core extends JavaPlugin {
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, org.bukkit.command.Command cmd,
-            String commandLabel, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         try {
             this.commands.execute(cmd.getName(), args, sender, sender);
         } catch (CommandPermissionsException e) {
